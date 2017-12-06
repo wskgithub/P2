@@ -1,0 +1,349 @@
+
+<head>
+    <meta charset="utf-8">
+    <title>Fresh Tomatoes!</title>
+
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <style type="text/css" media="screen">
+        body {
+            padding-top: 80px;
+        }
+        #trailer .modal-dialog {
+            margin-top: 200px;
+            width: 640px;
+            height: 480px;
+        }
+        .hanging-close {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            z-index: 9001;
+        }
+        #trailer-video {
+            width: 100%;
+            height: 100%;
+        }
+        .movie-tile {
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+        .movie-tile:hover {
+            background-color: #EEE;
+            cursor: pointer;
+        }
+        .scale-media {
+            padding-bottom: 56.25%;
+            position: relative;
+        }
+        .scale-media iframe {
+            border: none;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background-color: white;
+        }
+    </style>
+    <script type="text/javascript" charset="utf-8">
+        // Pause the video when the modal is closed
+        $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
+            // Remove the src so the player itself gets removed, as this is the only
+            // reliable way to ensure the video stops playing in IE
+            $("#trailer-video-container").empty();
+        });
+        // Start playing the video whenever the trailer modal is opened
+        $(document).on('click', '.movie-tile', function (event) {
+            var trailerSrc = $(this).attr('data-trailer_src')
+            var sourceUrl = trailerSrc + '?autoplay=1&html5=1';
+            $("#trailer-video-container").empty().append($("<iframe></iframe>", {
+              'id': 'trailer-video',
+              'type': 'text-html',
+              'src': sourceUrl,
+              'frameborder': 0
+            }));
+        });
+        // Animate in the movies when the page loads
+        $(document).ready(function () {
+          $('.movie-tile').hide().first().show("fast", function showNext() {
+            $(this).next("div").show("fast", showNext);
+          });
+        });
+    </script>
+</head>
+
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <!-- Trailer Video Modal -->
+    <div class="modal" id="trailer">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
+            <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
+          </a>
+          <div class="scale-media" id="trailer-video-container">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Page Content -->
+    <div class="container">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Fresh Tomatoes Movie Trailers</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟一分钟/688.那天，人类终于感受到被ai所取代的恐惧（主站）.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟一分钟/1512467093152213695.jpg" width="300" height="180">
+    <h5>那天，人类终于感受到被ai所取代的恐惧</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟说/201.我更喜欢内向的自己，你呢？（主站）.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟说/1512373724904149841.jpg" width="300" height="180">
+    <h5>我更喜欢内向的自己，你呢？</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟一分钟/687.过劳肥，每一个加班狗的最终归宿（主站）.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟一分钟/1512033390259236238.jpg" width="300" height="180">
+    <h5>过劳肥，每一个加班狗的最终归宿</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟说/201.主站【飞碟说】  一起打野不如一起泡大澡，澡堂到底有啥好？.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟说/1512031384679772985.jpg" width="300" height="180">
+    <h5>一起打野不如一起泡大澡，澡堂到底有啥好？</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟一分钟/686.时光飞逝，物价飞涨，可乐为啥还卖三块（主站）.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟一分钟/1511858307585223754.jpg" width="300" height="180">
+    <h5>时光飞逝，物价飞涨，可乐为啥还卖三块</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟说/199.主站【飞碟说】一切都是别人的错吗？醒醒吧，甩锅侠！.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟说/1511794392372233868.jpg" width="300" height="180">
+    <h5>一切都是别人的错吗？醒醒吧，甩锅侠！</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟说/198.主站【飞碟说】 月薪终于过万，我却养不起小孩了.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟说/1511426799117763582.jpg" width="300" height="180">
+    <h5>月薪终于过万，我却养不起小孩了</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟一分钟/685.大吉大利，晚上吃鸡（主站）.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟一分钟/1511491975959303748.jpg" width="300" height="180">
+    <h5>大吉大利，晚上吃鸡</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟说/197.主站【飞碟说】丧尸围城，你恐惧的到底是丧尸还是人类自己？.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟说/1511345490263118966.jpg" width="300" height="180">
+    <h5>丧尸围城，你恐惧的到底是丧尸还是人类自己？</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟一分钟/684.苏联人：求求你们了，秋裤真的跟我没关系（主站）.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟一分钟/1511271754924521640.jpg" width="300" height="180">
+    <h5>苏联人：求求你们了，秋裤真的跟我没关系</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟说/196.【主站】你有一条个人信息正在被泄露..-.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟说/1511172325510526362.jpg" width="300" height="180">
+    <h5>你有一条个人信息正在被泄露..</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟说/196.知识付费是脑力充值还是为智商交税（主站）.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟说/1511940825377385530.jpg" width="300" height="180">
+    <h5>知识付费是脑力充值还是为智商交税</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟说/195.主站【飞碟说】煮碗面给你吃，是北方人最温暖的情话.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟说/1510823322830567511.jpg" width="300" height="180">
+    <h5>煮碗面给你吃，是北方人最温暖的情话</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟一分钟/683.鸡汤，这令人智熄的操作（主站）.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟一分钟/1510814415421703916.jpg" width="300" height="180">
+    <h5>鸡汤，这令人智熄的操作</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟说/194.主站【飞碟说】当尬文化成为流行，你还怕尴尬吗？.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟说/151073448789665891.jpg" width="300" height="180">
+    <h5>当尬文化成为流行，你还怕尴尬吗？</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟一分钟/682-我去举个报，你就在此地开挂，不要走动（主站）.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟一分钟/1510653794399224917.jpg" width="300" height="180">
+    <h5>我去举个报，你就在此地开挂，不要走动</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟说/喂，你敢喜欢我吗（主站）.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟说/151056658559769541.jpg" width="300" height="180">
+    <h5>喂，你敢喜欢我吗</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟说/主站【飞碟说】除了超级英雄，未来需要什么样的人才.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟说/1510223374725176260.jpg" width="300" height="180">
+    <h5>除了超级英雄，未来需要什么样的人才</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟一分钟/681.除了买不起，今后拒绝皮草又多了一个理由（主站）.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟一分钟/1510221276341186678.jpg" width="300" height="180">
+    <h5>除了买不起，今后拒绝皮草又多了一个理由</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟一分钟/一分钟告诉你得了灰指甲，会不会传染俩（主站）.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟一分钟/1510213353577349688.jpg" width="300" height="180">
+    <h5>一分钟告诉你得了灰指甲，会不会传染俩</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟一分钟/653.一分钟告诉你这条转发的锦鲤给我炖了（主站）.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟一分钟/1510213287064414825.jpg" width="300" height="180">
+    <h5>一分钟告诉你这条转发的锦鲤给我炖了</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟一分钟/一分钟告诉你《鹿鼎记》里的化尸水真的存在吗（主站）.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟一分钟/151021321353783453.jpg" width="300" height="180">
+    <h5>一分钟告诉你《鹿鼎记》里的化尸水真的存在吗</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟一分钟/629.一分钟告诉你看见你疼我他妈也好疼（主站）.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟一分钟/1510213150618361950.jpg" width="300" height="180">
+    <h5>一分钟告诉你看见你疼我他妈也好疼</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟说/主站【飞碟说】香港最后的辉煌-TVB.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟说/1510150156998618265.jpg" width="300" height="180">
+    <h5>香港最后的辉煌-TVB</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟一分钟/680-金拱门土掉渣？m记的情怀你不懂（主站）.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟一分钟/15100513000821006551.jpg" width="300" height="180">
+    <h5>金拱门土掉渣？m记的情怀你不懂</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟说/190.主站【飞碟说】嫌自己命大？中国马路分分钟教你做人！.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟说/1509962248758919915.jpg" width="300" height="180">
+    <h5>嫌自己命大？中国马路分分钟教你做人！</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟说/【内涵】为什么结婚的少了离婚的多了.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟说/1509619301525124911.jpg" width="300" height="180">
+    <h5>为什么结婚的少了离婚的多了</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟一分钟/680.别人的婚礼您可劲儿闹，出来混，迟早要还（主站）.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟一分钟/1509617904166327928.jpg" width="300" height="180">
+    <h5>别人的婚礼您可劲儿闹，出来混，迟早要还</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟说/主站【飞碟说】没去过重庆，说啥子江湖？.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟说/150955374735259443.jpg" width="300" height="180">
+    <h5>没去过重庆，说啥子江湖？</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟一分钟/679.曲面电视才是弯得服（主站）.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟一分钟/1509435965915469436.jpg" width="300" height="180">
+    <h5>曲面电视才是弯得服</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟说/【飞碟说】内涵—吸猫吸狗不如吸滚滚，卖萌，就服滚滚！.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟说/1509372099786328226.jpg" width="300" height="180">
+    <h5>吸猫吸狗不如吸滚滚，卖萌，就服滚滚！</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟一分钟/678.水果酵素能排毒？忽悠，你接着忽悠（内涵）.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟一分钟/1509010942102632046.jpg" width="300" height="180">
+    <h5>水果酵素能排毒？忽悠，你接着忽悠</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟说/内涵【飞碟说】香港滋味：质感出行.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟说/1509006432290676865.jpg" width="300" height="180">
+    <h5>香港滋味：质感出行</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟说/【内涵】天若有情天亦老 我为电竞续一秒.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟说/1508926312037662615.jpg" width="300" height="180">
+    <h5>天若有情天亦老 我为电竞续一秒</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟一分钟/677-不舒服的口罩根本配不上优秀的我（ 内涵）.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟一分钟/1508917285196175395.jpg" width="300" height="180">
+    <h5>一分钟告诉你不舒服的口罩根本配不上我 </h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟说/内涵【飞碟说】你的乡愁是哪一首民谣.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟说/1508770939406541977.jpg" width="300" height="180">
+    <h5>你的乡愁是哪一首民谣</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟一分钟/676-公关文掐架，我只服送锤桐子（主站）.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟一分钟/1508402776101121191.jpg" width="300" height="180">
+    <h5>公关文掐架，我只服送锤桐子</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟说/一条搜救犬的使命（主站）.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟说/1508317174097499126.jpg" width="300" height="180">
+    <h5>一条搜救犬的使命</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟一分钟/675.我们不骗！不抢！不偷井盖！谢谢！（主站）.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟一分钟/1508232183069581674.jpg" width="300" height="180">
+    <h5>我们不骗！不抢！不偷井盖！谢谢！</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟说/【内涵】没有什么是一杯热水不能解决的.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟说/150816439634062017.jpg" width="300" height="180">
+    <h5>没有什么是一杯热水不能解决的</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟说/【内涵】以前选美斗艳，现在选美有毒.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟说/1507804877663873010.jpg" width="300" height="180">
+    <h5>以前选美斗艳，现在选美有毒</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟一分钟/674.强卖人设？红起来快，崩起来更快（主站）.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟一分钟/1507802149160459825.jpg" width="300" height="180">
+    <h5>强卖人设？红起来快，崩起来更快</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟说/内涵【飞碟说】苏南苏北究竟什么仇什么怨.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟说/1507735647830973769.jpg" width="300" height="180">
+    <h5>苏南苏北究竟什么仇什么怨</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟一分钟/673.失恋而已，怎么就疼得像世界末日（内涵）.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟一分钟/1507621699885401746.jpg" width="300" height="180">
+    <h5>失恋而已，怎么就疼得像世界末日</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟说/【主站】你对真正的粉丝一无所知.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟说/1507540094151534119.jpg" width="300" height="180">
+    <h5>你对真正的粉丝一无所知</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟说/内涵【飞碟说】远亲不如近邻？哦，是吗！.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟说/1506593588531808367.jpg" width="300" height="180">
+    <h5>远亲不如近邻？哦，是吗！</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟一分钟/672.女票如狼似虎，延时喷雾靠不靠谱？（主站）.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟一分钟/1506591978353598928.jpg" width="300" height="180">
+    <h5>女票如狼似虎，延时喷雾靠不靠谱？</h5>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer_src="http://video.feidieshuo.com/mp4/飞碟说/内涵【飞碟说】愿你堵车半生 归来仍是满油.mp4" data-toggle="modal" data-target="#trailer">
+    <img src="http://video.feidieshuo.com/videoshot/飞碟说/1506519419237846798.jpg" width="300" height="180">
+    <h5>愿你堵车半生 归来仍是满油</h5>
+</div>
+
+    </div>
+  </body>
+</html>
